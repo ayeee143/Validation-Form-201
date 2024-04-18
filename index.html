@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Pictures/faviconforvalidationform.jpeg">
+    <title>Jujutsu Kaisen Validation Form</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h2>Login..</h2>
+        <form id="validationForm">
+            <div class="form-control">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-control">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1f1f1f;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(Pictures/letso.jpg);
+            background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+        }
+
+        .container {
+            width: 300px;
+            padding: 30px 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        .form-control {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: #fff;
+            outline: none;
+        }
+
+        input[type="email"]::placeholder,
+        input[type="password"]::placeholder {
+            color: #bbb;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: gold;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: maroon;
+        }
+    </style>
+
+    <script>
+        document.getElementById('validationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form values
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Simple email validation (you can enhance it according to your needs)
+            if (!isValidEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Simple password length validation (you can enhance it according to your needs)
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long.');
+                return;
+            }
+
+            // If everything is valid, you can proceed with form submission or other actions
+            alert('Form submitted successfully!');
+        });
+
+        // Simple email validation function
+        function isValidEmail(email) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+</html>
